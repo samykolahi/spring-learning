@@ -1,8 +1,6 @@
 package com.skola.springdemo;
 
-public interface Coach {
-
-    String getDailyWorkout();
+public interface FortuneService {
 
     String getFortune();
 
