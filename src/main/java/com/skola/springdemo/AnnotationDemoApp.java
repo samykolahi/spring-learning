@@ -6,9 +6,14 @@ public class AnnotationDemoApp {
 
     public static void main(String[] args) {
 
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        Coach coach = context.getBean("tennisCoach", Coach.class);
+        try {
+            ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+            Coach coach = context.getBean("tennisCoach", Coach.class);
+            System.out.println(coach.getDailyWorkout());
+            context.close();
+        } catch (Exception e) {
+            System.out.println("Shit happened: " + e.getMessage());
+        }
 
-        System.out.println(coach.getDailyWorkout());
     }
 }
