@@ -13,7 +13,8 @@ public class AnnotationDemoApp {
             System.out.println(coach.getFortune());
             context.close();
         } catch (Exception e) {
-            System.out.println("Shit happened: " + e.getMessage());
+            System.out.println("error happened : \n");
+            throw e;
         }
     }
 }
