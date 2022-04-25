@@ -1,13 +1,14 @@
 package com.skola.springdemo;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import com.skola.config.Config;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class AnnotationDemoApp {
+public class JavaConfigApp {
 
     public static void main(String[] args) {
 
         try {
-            ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+            AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
             Coach coach = context.getBean("tennisCoach", Coach.class);
             System.out.println(coach.getDailyWorkout());
             System.out.println(coach.getFortune());
